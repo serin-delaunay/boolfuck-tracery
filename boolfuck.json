@@ -6,7 +6,9 @@
 	"instructions_text": "+;+;+;>;+;+;<;",
 	"expected_output": "1010101",
 	"debug_init": "[run_next:][instrs_upper:;][instrs_upper:<][instrs_upper:;][instrs_upper:+][instrs_upper:;][instrs_upper:+][instrs_upper:;][instrs_upper:>][instrs_upper:;][instrs_upper:+][instrs_upper:;][instrs_upper:+][instrs_upper:;][instrs_upper:+]",
-	"init": "This tag must be overwritten by the bftracery compiler.#FAIL#",
+	"init": "[run_next:]#init_instrs##init_input#",
+	"init_instrs":"This tag must be overwritten by the bftracery compiler.#FAIL#",
+	"init_input":"This tag must be overwritten by the bftracery compiler.#FAIL#",
 
 	"run": "#drop_next##run_step##run_next#",
 	"run_step": "#read_instr##load_instr##exec_instr##drop_exec##drop_instr##exec_advance##drop_advance#",

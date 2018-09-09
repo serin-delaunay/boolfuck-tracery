@@ -28,9 +28,9 @@ instruction_map = {
 }
 tracery_instructions = ''.join ('[instrs_upper:{}]'.format(instruction_map[i]) for i in reversed(source))
 tracery_input = ''.join('[input:{}]'.format(i) for i in reversed(input))
-tracery_init = "[run_next:]" + tracery_instructions + tracery_input
 with open("boolfuck.json") as tracery_source:
     tracery = json.load(tracery_source, object_pairs_hook=OrderedDict)
-tracery['init'] = tracery_init
+tracery['init_instrs'] = tracery_instructions
+tracery['init_input'] = tracery_input
 with open(args.source+'.json', 'w') as output:
     json.dump(tracery, output, indent='\t')
